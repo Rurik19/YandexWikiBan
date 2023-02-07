@@ -8,7 +8,7 @@ const yandexWikiButtonSelector = "div.entity-search__wiki-button";
 
 const redBorder = el =>  el.style.border = "3px dotted red";
 
-const removeElement = el => el.remove();
+const removeElement = el => el.style.display = "none";
 
 const banAction = el => {
     _DEBUG && redBorder(el) ||  removeElement(el);
