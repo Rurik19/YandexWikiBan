@@ -2,7 +2,7 @@
 
 ## What it does
 
-Removes Wikipedia pages from Yandex search results page.
+Removes Wikipedia links from Yandex search results page.
 
 - from result list itself
 - wikipedia article button
