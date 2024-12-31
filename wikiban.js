@@ -6,6 +6,12 @@ const yandexSearchResultCardSelector = 'li.serp-item_card';
 const yandexPathElementSelector = 'div.Path';
 const yandexWikiButtonSelector = "div.entity-search__wiki-button";
 
+const topYBrowserAdvertisingClass = 'Distribution';
+const aliceButtonId = 'alice-fab';
+const aliceButtonClass = 'alice-fab';
+
+const rightPartId= 'search-result-aside'
+
 const redBorder = el =>  el.style.border = "3px dotted red";
 
 const removeElement = el => el.style.display = "none";
@@ -42,8 +48,18 @@ const removeYandexWikiButtons = () => iterateElementsList(getYandexWikiButtons()
 const getYandexAllLinks = () => document.querySelectorAll("a");
 const removeYandexWikiLinks = () => iterateElementsList(getYandexAllLinks(), filterLink, (el) => banAction(el));
 
+const getDistributions = () => document.querySelectorAll(`.${topYBrowserAdvertisingClass}`);
+const removeDistribution =  () => iterateElementsList(getDistributions(), _ => true, (el) => banAction(el));
+const removeAliceButton = () => removeElement( document.getElementById(aliceButtonId) );
+const removeAliceButton2 = () =>  iterateElementsList(document.getElementsByClassName(aliceButtonClass), _ => true, (el) => banAction(el));
+const removeRightPart = () => removeElement( document.getElementById(rightPartId));
+
 removeFromYandexSearchResults();
 removeYandexWikiButtons();
 removeYandexWikiLinks();
+removeDistribution();
+removeAliceButton();
+removeAliceButton2();
+removeRightPart();
 
 informAboutResult();
